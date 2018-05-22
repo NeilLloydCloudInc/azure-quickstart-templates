@@ -4,7 +4,7 @@
   "parameters": {
     "esClusterName": {
       "type": "string",
-      "defaultValue": "elasticsearch",
+      "defaultValue": "comvita-int-core-elk-c",
       "metadata": {
         "description": "The name of the Elasticsearch cluster."
       }
@@ -43,7 +43,7 @@
     },
     "vmDataNodeCount": {
       "type": "int",
-      "defaultValue": 1,
+      "defaultValue": 3,
       "metadata": {
         "description": "Number of Elasticsearch data nodes"
       }
@@ -170,7 +170,7 @@
     },
     "_artifactsLocation": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/diagnostics-eventhub-elk",
+      "defaultValue": "https://raw.githubusercontent.com/NeilLloydCloudInc/azure-quickstart-templates/master/diagnostics-eventhub-elk",
       "metadata": {
         "description": "Change this value to your repo name if deploying from a fork"
       }
@@ -199,7 +199,7 @@
     "storageAccountType": "Standard_LRS",
     "vmStorageAccountContainerName": "vhds",
     "vmName": "logstashvm1",
-    "vmSize": "Standard_D1",
+    "vmSize": "Standard_D4s_v3",
     "vmNicName": "[concat(variables('vmName'), '-nic')]",
     "vmNsgName": "[concat(variables('vmName'), '-nsg')]",
     "vmPipName": "[concat(variables('vmName'), '-pip')]",
