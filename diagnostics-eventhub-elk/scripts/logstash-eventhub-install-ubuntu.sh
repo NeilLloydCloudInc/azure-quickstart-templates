@@ -116,14 +116,14 @@ sudo apt-get -y --force-yes install logstash
 
 # Install Azure WAD Event Hub Plugin
 log "Installing Azure WAD Event Hub Plugin"
-sudo /opt/logstash/bin/logstash-plugin install logstash-input-azurewadeventhub
+sudo /opt/logstash/bin/logstash-plugin install logstash-input-azureeventhub
 
 
 # Install Logstash configuration
 
 log "Generating Logstash Config"
 echo "input {" > ~/logstash.conf
-echo "  azurewadeventhub {key => '$EH_KEY' username => '$EH_KEY_NAME' eventhub => '$EH_ENTITY'  namespace => '$EH_NAMESPACE' partitions => $EH_PARTITIONS}" >> ~/logstash.conf
+echo "  azureeventhub {key => '$EH_KEY' username => '$EH_KEY_NAME' eventhub => '$EH_ENTITY'  namespace => '$EH_NAMESPACE' partitions => $EH_PARTITIONS}" >> ~/logstash.conf
 echo "}" >> ~/logstash.conf
 echo "output {elasticsearch {hosts => ['$ES_CLUSTER_IP:9200'] index => 'wad'}}" >> ~/logstash.conf
 cat ~/logstash.conf
